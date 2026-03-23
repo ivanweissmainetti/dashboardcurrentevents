@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-red: #A32135;
+  --color-beige: #E6E0D8;
+  --color-cream: #F4F1EC;
+  --color-taupe: #CBBCA5;
+  --color-blue: #7798B2;
+  --color-charcoal: #5D646B;
+  --color-sage: #858D84;
+  --color-rose: #AA9391;
+  --sidebar-bg: #FAFAF8;
+  --sidebar-border: #E6E0D8;
+}
+
+.dark {
+  --sidebar-bg: #18181b;
+  --sidebar-border: #27272a;
+}
+
+body {
+  font-family: 'Jost', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBBCA5; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb { background: #3f3f46; }
+
+/* Animations */
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.animate-fade-in { animation: fade-in 0.3s ease-out; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Urgency bar glow */
+.urgency-critical { box-shadow: 0 0 8px rgba(239, 68, 68, 0.3); }
+.urgency-high { box-shadow: 0 0 8px rgba(249, 115, 22, 0.2); }
